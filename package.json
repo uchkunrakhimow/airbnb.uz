@@ -1,0 +1,40 @@
+{
+  "name": "airbnb",
+  "scripts": {
+    "start": "node dist/index.js",
+    "start:dev": "tsx watch --env-file=.env --no-deprecation -r tsconfig-paths/register src/index.ts",
+    "build": "tsc && tsc-alias -p tsconfig.json",
+    "prisma:migration": "npx prisma migrate dev --name init",
+    "prisma:seed": "tsx prisma/seeds/seed.ts",
+    "prisma:migration:prod": "npx prisma migrate deploy",
+    "prisma:generate": "npx prisma generate",
+    "prisma:studio": "npx prisma studio"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "bcryptjs": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^6.3.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@tsconfig/recommended": "^1.0.8",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "^22.13.4",
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.0"
+  }
+}
